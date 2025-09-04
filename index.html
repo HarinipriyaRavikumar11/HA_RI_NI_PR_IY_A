@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #ffb085; /* Peach */
+      color: black;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid black;
+      object-fit: cover;
+      animation: bounceIn 1.5s ease;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    header img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.2); opacity: 1; }
+      70% { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+    nav {
+      text-align: center;
+      margin: 15px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ff6f61;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: black;
+    }
+    section {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .skills, .projects {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      flex: 1 1 250px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Profile Photo -->
+    <h1>Hi, I'm Harini Priya</h1>
+    <p>Aspiring Data Scientist & Programmer | C++, Python, HTML</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm Harini Priya Ravikumar from Neyveli. I love cricket and athletics. 
+      My passion is to become a Data Scientist and I’m also interested in programming languages and web development.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="card">C++</div>
+      <div class="card">Python</div>
+      <div class="card">HTML</div>
+      <div class="card">Web Development Fundamentals</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects & Certificates</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Web Development Fundamentals</h3>
+        <p>Completed via IBM Learning Platform</p>
+        <a href="https://skills.yourlearning.ibm.com/activity/PLAN-8749C02A78EC" target="_blank">View Certificate</a>
+      </div>
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>http://GRqeXVb63SdfIbg:SYybazCpWszeqjH@localhost:56809/storage/emulated/0/priyaa.html#projects
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: jaihariniravikumar@gmail.com</p>
+    <p>Phone: +91 6380787644</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Harini Priya | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Scroll Animation
+    const sections = document.querySelectorAll("section");
+    const reveal = () => {
+      sections.forEach(sec => {
+        const secTop = sec.getBoundingClientRect().top;
+        if (secTop < window.innerHeight - 100) {
+          sec.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", reveal);
+    reveal();
+  </script>
+
+</body>
+</html>
